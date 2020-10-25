@@ -1,0 +1,61 @@
+int buzz = 9;
+int readPin = A2;
+int readVal;
+float v2;
+int t = 2000;
+void setup() {
+  // put your setup code here, to run once:
+pinMode(readPin, INPUT);
+pinMode(buzz, OUTPUT);
+Serial.begin(9600);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+readVal = analogRead(readPin);
+v2 = (5./1023.)*readVal;
+Serial.println(v2);
+delay(t);
+
+if (v2 > 4 && v2 < 5)
+{
+  analogWrite(buzz, 255);
+  delay(t);
+  
+  
+}
+
+if (v2 > 3 && v2 < 4)
+{
+  analogWrite(buzz, 200);
+  delay(t);
+  
+  
+}
+
+
+if (v2 > 2 && v2 < 3)
+{
+  analogWrite(buzz, 155);
+  delay(t);
+ 
+}
+
+
+if (v2 > 1 && v2 < 2)
+{
+  analogWrite(buzz, 100);
+  delay(t);
+  
+  
+}
+
+if (v2 > 0 && v2 < 1)
+{
+  analogWrite(buzz, 0);
+  
+  
+  
+}
+
+}
